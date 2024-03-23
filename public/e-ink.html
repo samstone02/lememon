@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Ink</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/scrollbar.css">
+</head>
+<body>
+    <div class="app-root">
+        <nav class="app-light">
+            <div class="app-navtab-wrapper">
+                <button class="app-navtab app-navtab--hover-background-grey">
+                    <img class="app-navtab-icon" src="/icons/svg-repo/generic-logo.svg">
+                </button>
+                <button class="app-navtab app-navtab--selected-background-black">
+                    <div class="app-navtab-left-group">
+                        <img class="app-navtab-icon" src="/icons/svg-repo/home.svg">
+                        Home
+                    </div>
+                    <div>
+                        <img class="app-navtab-icon" src="/icons/svg-repo/bell-svgrepo-com-light.svg">
+                    </div>
+                </button>
+                <button class="app-navtab app-navtab--hover-background-grey">
+                    <div class="app-navtab-left-group">
+                        <img class="app-navtab-icon" src="/icons/svg-repo/cards-vertical.svg">
+                        Flashcards
+                    </div>
+                    <div>
+                        <img class="app-navtab-icon" src="/icons/svg-repo/bell-svgrepo-com-dark.svg">
+                    </div>
+                </button>
+                <button class="app-navtab app-navtab--hover-background-grey">
+                    <div class="app-navtab-left-group">
+                        <img class="app-navtab-icon" src="/icons/svg-repo/calendar.svg">
+                        Calendar
+                    </div>
+                </button>
+                <button class="app-navtab app-navtab--hover-background-grey">
+                    <div class="app-navtab-left-group">
+                        <img class="app-navtab-icon" src="/icons/svg-repo/to-do.svg">
+                        To Do
+                    </div>
+                    <div>
+                        <!-- <img class="app-navtab-icon" src="/assets/icons/svg-repo/bell-svgrepo-com-dark.svg"> -->
+                    </div>
+                </button>
+                <button class="app-navtab app-navtab--hover-background-grey">
+                    <div class="app-navtab-left-group">
+                        <img class="app-navtab-icon" src="/icons/svg-repo/blog.svg">
+                        Blog
+                    </div>
+                    <div>
+                        <!-- <img class="app-navtab-icon" src="/assets/icons/svg-repo/bell-svgrepo-com-dark.svg"> -->
+                    </div>
+                </button>
+                <button class="app-navtab app-navtab--hover-background-grey">
+                    <div class="app-navtab-left-group">
+                        <img class="app-navtab-icon" src="/icons/svg-repo/doc.svg">
+                        Notes
+                    </div>
+                    <div>
+                        <!-- <img class="app-navtab-icon" src="/assets/icons/svg-repo/bell-svgrepo-com-dark.svg"> -->
+                    </div>
+                </button>
+            </div>
+            <div class="nav-controls">
+                <div>
+                    <img class="app-navtab-icon" src="/icons/svg-repo/settings-svgrepo-com.svg">
+                </div>
+                <div>
+                    <img class="app-navtab-icon" src="/icons/svg-repo/light-mode-svgrepo-com.svg">
+                </div>
+            </div>
+        </nav>
+        <main class="app-light">
+            <!-- <h1>Home</h1> -->
+            <div class="app-main-content">
+                <div class="app-main-left-group app-actionable-container">
+                    <!-- <h2>Actionables</h2> -->
+                    <div class="app-actionable">
+                        <h3>What is this thing?</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga id obcaecati dolor assumenda quos voluptatum nemo. Necessitatibus exercitationem eos molestias voluptatum repudiandae voluptatem possimus, alias eum quisquam accusantium rerum libero.</p>
+                    </div>
+                    <div class="app-actionable app-actionable-to-do">
+                        <div class="app-actionable-to-do--left-group">
+                            <div class="app-actionable-to-do--left-group--header">
+                                <h3>HW: Derivatives Pt 2</h3>
+                            </div>
+                            <p>- Make flashcards for new derivatives<br>- Double check question 4 with Jack</p>
+                        </div>
+                        <div class="app-actionable-to-do--right-group">
+                            <img class="app-actionable-to-do--check-icon" src="/icons/svg-repo/circle-svgrepo-com.svg">
+                        </div>
+                    </div>
+                    <div class="app-actionable app-actionable-to-do">
+                        <div class="app-actionable-to-do--left-group">
+                            <div class="app-actionable-to-do--left-group--header">
+                                <h3>Finish up charcoal painting</h3>
+                            </div>
+                        </div>
+                        <div class="app-actionable-to-do--right-group">
+                            <img class="app-actionable-to-do--check-icon" src="/icons/svg-repo/circle-svgrepo-com.svg">
+                        </div>
+                    </div>
+                    <div class="app-actionable app-actionable--flashcard-set">
+                        <div class="app-actionable-flashcard">
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--front">
+                                <h3>Q1: What is Docker and what are the main concepts?</h3>
+                            </div>
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--back">
+                                <p>Docker is a containerization software which allows application and their dependencies to be packaged together into a standalone unit called an image. A container is an instance of an image, and is what actually runs when you run an image.</p>
+                            </div>
+                        </div>
+                        <div class="app-actionable-flashcard">
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--front">
+                                <h3>Q2: What is Docker and what are the main concepts?</h3>
+                            </div>
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--back">
+                                <p>Docker is a containerization software which allows application and their dependencies to be packaged together into a standalone unit called an image. A container is an instance of an image, and is what actually runs when you run an image.</p>
+                            </div>
+                        </div>
+                        <div class="app-actionable-flashcard">
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--front">
+                                <h3>Q3: What is Docker and what are the main concepts?</h3>
+                            </div>
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--back">
+                                <p>Docker is a containerization software which allows application and their dependencies to be packaged together into a standalone unit called an image. A container is an instance of an image, and is what actually runs when you run an image.</p>
+                            </div>
+                        </div>
+                        <div class="app-actionable-flashcard">
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--front">
+                                <h3>Q4: What is Docker and what are the main concepts?</h3>
+                            </div>
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--back">
+                                <p>Docker is a containerization software which allows application and their dependencies to be packaged together into a standalone unit called an image. A container is an instance of an image, and is what actually runs when you run an image.</p>
+                            </div>
+                        </div>
+                        <div class="app-actionable-flashcard">
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--front">
+                                <h3>Q5: What is Docker and what are the main concepts?</h3>
+                            </div>
+                            <div class="app-actionable-flashcard--side app-actionable-flashcard--back">
+                                <p>Docker is a containerization software which allows application and their dependencies to be packaged together into a standalone unit called an image. A container is an instance of an image, and is what actually runs when you run an image.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-actionable app-actionable-to-do">
+                        <div class="app-actionable-to-do--left-group">
+                            <div class="app-actionable-to-do--left-group--header">
+                                <h3>Finish up charcoal painting</h3>
+                            </div>
+                        </div>
+                        <div class="app-actionable-to-do--right-group">
+                            <img class="app-actionable-to-do--check-icon" src="/icons/svg-repo/circle-svgrepo-com.svg">
+                        </div>
+                    </div>
+                    <div class="app-actionable app-actionable-to-do">
+                        <div class="app-actionable-to-do--left-group">
+                            <div class="app-actionable-to-do--left-group--header">
+                                <h3>Finish up charcoal painting</h3>
+                            </div>
+                        </div>
+                        <div class="app-actionable-to-do--right-group">
+                            <img class="app-actionable-to-do--check-icon" src="/icons/svg-repo/circle-svgrepo-com.svg">
+                        </div>
+                    </div>
+                    <div class="app-actionable app-actionable-to-do">
+                        <div class="app-actionable-to-do--left-group">
+                            <div class="app-actionable-to-do--left-group--header">
+                                <h3>Finish up charcoal painting</h3>
+                            </div>
+                        </div>
+                        <div class="app-actionable-to-do--right-group">
+                            <img class="app-actionable-to-do--check-icon" src="/icons/svg-repo/circle-svgrepo-com.svg">
+                        </div>
+                    </div>
+                    <div class="app-actionable app-actionable-to-do">
+                        <div class="app-actionable-to-do--left-group">
+                            <div class="app-actionable-to-do--left-group--header">
+                                <h3>Finish up charcoal painting</h3>
+                            </div>
+                        </div>
+                        <div class="app-actionable-to-do--right-group">
+                            <img class="app-actionable-to-do--check-icon" src="/icons/svg-repo/circle-svgrepo-com.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="app-main-left-right">
+                    <div class="app-mini-calendar">
+                        calendar
+                    </div>
+                    <div class="app-sticky-notes">
+                        sticky notes
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        const flashcards = document.getElementsByClassName("app-actionable-flashcard")
+        let i = 0
+        Array.from(flashcards).forEach(flashcard => {
+            console.log(i)
+            flashcard.style.transform += `translateX(${30 * i}px)`
+            flashcard.style.transform += `scale(${1 / (0.1 * i + 1)})`
+            flashcard.style.zIndex = 100 - i
+            i += 1
+            console.log(flashcard)
+
+            flashcard.addEventListener("click", (event) => {
+                const front = flashcard.querySelector(".app-actionable-flashcard--front")
+                const back = flashcard.querySelector(".app-actionable-flashcard--back")
+
+                if (front.style.transform == "" || front.style.transform == "rotateY(0deg)") {
+                    front.style.transform = "rotateY(180deg)"
+                    back.style.transform = "rotateY(0deg)"
+                }
+                else {
+                    front.style.transform = "rotateY(0deg)"
+                    back.style.transform = "rotateY(180deg)"
+                }
+            });
+        });
+    </script>
+</body>
+</html>
