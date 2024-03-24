@@ -1,3 +1,3 @@
-# Stickit
+# Lememon
 
-Stickit is an experimental studying app created by Sam Stone.
+Lememon is an experimental studying app created by Sam Stone.
