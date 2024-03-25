@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import './styles/app.css';
 import App from './components/App';
 
-import FeatureHome from './components/features/home/FeatureHome'
-import AppNav from './components/nav/AppNav';
+import './styles/app.css';
+import './styles/app-layout.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

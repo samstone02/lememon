@@ -25,10 +25,6 @@
     padding: 0;
     min-width: 0;
 }
-div.app-root {
-    display: flex;
-    height: 100vh;
-}
 h1 {
     font-family: 'Crimson Pro';
     font-size: xx-large;
@@ -56,6 +52,10 @@ button {
     letter-spacing: 0.2px;
 
     cursor: pointer;
+}
+a {
+    color: initial;
+    text-decoration: none;
 }
 
 .app-light {

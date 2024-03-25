@@ -5,18 +5,21 @@ import AppLayout from './layouts/AppLayout'
 
 export default function App() {
     return (
-        <div className="app-root">
-            <BrowserRouter>
-            <Routes>
-                <Route path="app" element={ <AppLayout/> }>
-                    <Route
-                        path=""
-                        element={<Navigate replace to="/app/home" />}
-                    />
-                    <Route path="home" element={ <FeatureHome/> } />
-                </Route>
-            </Routes>
-            </BrowserRouter>
-        </div>
+        <BrowserRouter>
+        <Routes>
+            <Route path="app" element={ <AppLayout/> }>
+                <Route
+                    path=""
+                    element={<Navigate replace to="/app/home" />}
+                />
+                <Route path="blog" element={ <FeatureHome/> } />
+                <Route path="calendar" element={ <FeatureHome/> } />
+                <Route path="flashcards" element={ <FeatureHome/> } />
+                <Route path="home" element={ <FeatureHome/> } />
+                <Route path="notes" element={ <FeatureHome/> } />
+                <Route path="to-do" element={ <FeatureHome/> } />
+            </Route>
+        </Routes>
+        </BrowserRouter>
     )
 }

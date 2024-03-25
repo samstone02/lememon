@@ -1,18 +1,22 @@
-a.navtab {
+.navtab {
     width: 100%;
+    height: 32px;
     position: relative;
     align-items: center;
     justify-content: space-between;
     display: flex;
     gap: 8px;
-    padding: 20px 8px;
-    height: 32px;
 }
 a.navtab-inactive {
-    background-color: red;
+    /* background-color: red; */
 }
 a.navtab-inactive:hover {
     background-color: var(--color-medium-light);
+    color: var(--color-dark);
+}
+a.navtab-active {
+    background-color: var(--color-dark);
+    color: var(--color-light);
 }
 div.navtab--left-group {
     display: flex;

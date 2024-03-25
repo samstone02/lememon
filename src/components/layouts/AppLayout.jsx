@@ -1,11 +1,15 @@
 import { Outlet } from "react-router-dom";
 import AppNav from "../nav/AppNav";
 
-export default function AppLayout(props) {
+import '../../styles/app-main.css'
+
+export default function AppLayout() {
     return (
-        <div className="app-root">
+        <div className="app-layout">
             <AppNav/>
-            <Outlet/>
+            <main className="app-main">
+                <Outlet/>
+            </main>
         </div>
     )
 }

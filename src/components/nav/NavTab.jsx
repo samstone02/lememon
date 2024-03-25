@@ -5,7 +5,9 @@ export default function NavTab(props) {
 
     return (       
         <NavLink
-            className={(isActive) => "navtab" + isActive? "navtab-active": "navtab-inactive"}
+            className={(status) => { 
+                return (status.isActive? "navtab navtab-active": "navtab navtab-inactive")
+            }}
             to={props.to}
         >
             <div className="navtab--left-group">
