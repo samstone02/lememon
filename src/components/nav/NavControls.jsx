@@ -1,11 +1,11 @@
 export default function NavControls() {
     return (
-        <div class="nav-controls">
+        <div className="nav-controls">
             <div>
-                <img class="app-navtab-icon" src="/icons/svg-repo/settings-svgrepo-com.svg"/>
+                <img className="app-navtab-icon" src="/icons/temp/settings-svgrepo-com.svg" alt="Settings"/>
             </div>
             <div>
-                <img class="app-navtab-icon" src="/icons/svg-repo/light-mode-svgrepo-com.svg"/>
+                <img className="app-navtab-icon" src="/icons/temp/light-mode-svgrepo-com.svg" alt="Theme"/>
             </div>
         </div>
     )

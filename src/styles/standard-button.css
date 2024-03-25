@@ -1,0 +1,11 @@
+button.standard-button {
+    margin: 5px 0px;
+    padding: 5px;
+    border-radius: 3px;
+
+    transition: background-color ease-in 0.15s,
+        color ease-in 0.15s;
+
+    color: var(--color-accent-darker);
+    border: 1px solid var(--color-accent-darker);
+}

@@ -1,13 +1,20 @@
+import { NavLink } from 'react-router-dom'
+import '../../styles/navtab.css'
+
 export default function NavTab(props) {
-    return (
-        <button class="app-navtab app-navtab--selected-background-black">
-            <div class="app-navtab-left-group">
-                <img class="app-navtab-icon" src={props.iconUrl}/>
+
+    return (       
+        <NavLink
+            className={(isActive) => "navtab" + isActive? "navtab-active": "navtab-inactive"}
+            to={props.to}
+        >
+            <div className="navtab--left-group">
+                <img className="app-navtab-icon" src={props.iconUrl} alt={props.altText}/>
                 {props.title}
             </div>
             <div>
-                <img class="app-navtab-icon" src={"/icons/svg-repo/bell-svgrepo-com-light.svg"}/>
+                <img className="app-navtab-icon" src={"/icons/temp/bell-svgrepo-com-light.svg"} alt="Notifications"/>
             </div>
-        </button>
+        </NavLink>
     )
 }
