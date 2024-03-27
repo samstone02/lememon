@@ -1,6 +1,6 @@
 import Task from "./Task";
 
-export default function TaskFunnel() {
+export default function TaskContainer() {
     return (
         <div className="app-main-left-group app-actionable-container">
             <Task title="HW: Derivatives Pt 2" children="children"></Task>

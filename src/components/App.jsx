@@ -1,12 +1,16 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import FeatureHome from './features/home/FeatureHome'
 
+import FeatureHome from './app/home/FeatureHome'
 import AppLayout from './layouts/AppLayout'
+import Dnd from './proto/Dnd'
 
 export default function App() {
     return (
         <BrowserRouter>
         <Routes>
+            <Route path="proto">
+                <Route path="dnd" element={ <Dnd/> }></Route>
+            </Route>
             <Route path="app" element={ <AppLayout/> }>
                 <Route
                     path=""

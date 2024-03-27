@@ -1,11 +1,11 @@
-import TaskFunnel from "./TaskFunnel"
+import TaskContainer from "./TaskContainer"
 
 import '../../../styles/home.css'
 
 export default function HomeDrawer() {
     return (
         <main className="feature-home">
-            <TaskFunnel></TaskFunnel>
+            <TaskContainer/>
             <div className="app-main-left-right">
                 <div className="app-mini-calendar">
                     calendar
