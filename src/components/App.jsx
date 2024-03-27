@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-import FeatureHome from './app/home/FeatureHome'
-import AppLayout from './layouts/AppLayout'
-import Dnd from './proto/Dnd'
+import FeatureHome from '$/components/app/home/FeatureHome'
+import AppLayout from '$/components/layouts/AppLayout'
+import Dnd from '$/components/proto/Dnd'
 
 export default function App() {
     return (
