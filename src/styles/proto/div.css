@@ -1,0 +1,16 @@
+div {
+    /* border: 3px solid black; */
+    /* border-radius: 3px; */
+    margin: 16px;
+    padding: 8px;
+}
+
+div.container {
+    background-color: skyblue;
+}
+
+div.card {
+    border: 3px solid black;
+    border-radius: 3px;
+    background-color: coral;
+}

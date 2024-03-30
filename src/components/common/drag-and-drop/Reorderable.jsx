@@ -1,49 +1,38 @@
+import { useContext, useRef } from "react";
+import { ReorderableContext } from "./Context"
+
 /**
  * @summary A wrapper component which creates a draggable and reorderable element.
  * @param channel (string) Defines which reorderables can be placed into which containers. 
  */
 export default function Reorderable(props) {
-    let className = null;
-    function handleDragStart(event) {
-        event.target.style.visibility = "hidden"
-        className = event.target.getAttribute("class")
-        event.target.setAttribute("is-empty-space", true)
-    }
-    function handleDragEnd(event) {
-        event.target.style.visibility = "visible"
-        event.target.setAttribute("is-empty-space", false)
-    }
-    function handleDragOver(event) {
-        event.target.style.backgroundColor = "blue"
+    const ctx = useContext(ReorderableContext)
 
-        let emptySpaceIndex = 0;
-        props.order.forEach((orderable, index) => {
-            // console.log(orderable)
-            if (orderable.("is-empty-space")) {
-                emptySpaceIndex = index
-                return
-            }
-        })
-
-        let thisIndex = 0;
-        props.order.forEach((orderable, index) => {
-            if (orderable == event.target) {
-                thisIndex = index
-                return
-            }
-        })
-
-        console.log(emptySpaceIndex, thisIndex)
+    function handleOnDragStart(event) {
+        event.dataTransfer.setData("dragged-item-reorderable-id", props.reorderableId)
     }
+
+    function handleOnDragOver(event) {
+        // preventDefault call is required to identify a valid drop target
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#specifying_drop_targets
+        event.preventDefault();
+    }
+
+    function handleOnDrop(event) {
+        const draggedItemId = event.dataTransfer.getData('dragged-item-reorderable-id')
+        const dropTargetId = props.reorderableId
+    
+        ctx(draggedItemId, dropTargetId)
+    }
+
     return (
         <div
             className="reorderable"
             draggable
-            onDragStart={handleDragStart}
-            onDragEnd={handleDragEnd}
-            onDragOver={handleDragOver}
+            onDragStart={handleOnDragStart}
+            onDragOver={handleOnDragOver}
+            onDrop={handleOnDrop}
         >
-            <h1>{props.key}</h1>
             {props.children}
         </div>
     )
