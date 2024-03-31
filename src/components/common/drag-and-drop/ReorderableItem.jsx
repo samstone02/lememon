@@ -13,9 +13,6 @@ export default function ReorderableItem(props) {
     const reorderItems = useContext(ReorderableContext)
 
     function handleOnDragStart(event) {
-        console.debug(event.target)
-        console.debug(props.reorderableId)
-
         event.dataTransfer.setData("dragged-item-reorderable-id", props.reorderableId)
     }
 
@@ -24,12 +21,26 @@ export default function ReorderableItem(props) {
         // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#specifying_drop_targets
         event.preventDefault()
 
+        if (event.dataTransfer.getData('dragged-item-reorderable-id') == props.reorderableId) {
+            return
+        }
+
         setTimeout(() => {
             reorderItemsHelper(event)
         }, 500)
     }
 
+    function handleOnDragOver(event) {
+        // preventDefault call is required to identify a valid drop target
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#specifying_drop_targets
+        event.preventDefault()
+    }
+
     function handleOnDrop(event) {
+        if (event.dataTransfer.getData('dragged-item-reorderable-id') == props.reorderableId) {
+            return
+        }
+
         reorderItemsHelper(event)
     }
 
@@ -43,6 +54,7 @@ export default function ReorderableItem(props) {
         <div
             className={`${props.className} reorderable-item`}
             onDragEnter={handleOnDragEnter}
+            onDragOver={handleOnDragOver}
             onDrop={handleOnDrop}
         >
             {props.children}

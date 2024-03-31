@@ -9,10 +9,14 @@ export default function ReorderableContainer(props) {
     const [children, setChildren] = useState([])
 
     let reorderItems = (draggedItemId, dropTargetId) => {
-        console.log(children)
-
         const draggedItemIndex = children.findIndex(child => child.props.reorderableId == draggedItemId)
         const dropTargetIndex = children.findIndex(child => child.props.reorderableId == dropTargetId)
+
+        if (isDuplicateReorder(draggedItemId, dropTargetId, draggedItemIndex, dropTargetIndex)) {
+            // duplicate reorders occur because both drop and dragEnter call reorderItems
+            // Ensure unneeded rerenders don't happen
+            return
+        }
 
         const shiftDown = draggedItemIndex < dropTargetIndex
 
@@ -34,6 +38,32 @@ export default function ReorderableContainer(props) {
 
             setChildren(newChildren)
         }
+    }
+
+    const lastReorder = {
+        draggedItemId: -1,
+        dropTargetId: -1,
+        draggedItemIndex: -1,
+        dropTargetIndex: -1
+    }
+
+    function isDuplicateReorder(draggedItemId, dropTargetId, draggedItemIndex, dropTargetIndex) {
+        let ans = false
+        
+        if (lastReorder.draggedItemId == draggedItemId
+            || lastReorder.dropTargetId == dropTargetId
+            || lastReorder.draggedItemIndex == draggedItemIndex
+            || lastReorder.dropTargetIndex == dropTargetIndex
+        ) {
+            ans = true
+        }
+
+        lastReorder.draggedItemId = draggedItemId
+        lastReorder.dropTargetId = dropTargetId
+        lastReorder.draggedItemIndex = draggedItemIndex
+        lastReorder.dropTargetIndex = dropTargetIndex
+
+        return ans
     }
 
     useEffect(() => {
