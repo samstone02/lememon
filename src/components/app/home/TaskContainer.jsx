@@ -7,12 +7,17 @@ export default function TaskContainer() {
         <div className="app-main-left-group app-actionable-container">
             <ReorderableContainer>
                 <ReorderableItem className="mt-4 p-4 border-solid border-black border-2">
-                    <Task title="pJEBRFHKEBFVJSEHW">
-                        <p>Something <a className="standard-button" href="https://google.com">Google</a></p>
+                    <Task title="1st thing">
+                        <p>pretty normal urgency</p>
                     </Task>
                 </ReorderableItem>
                 <ReorderableItem className="mt-4 p-4 border-solid border-black border-2">
-                    <Task title="2dfgfhsdgjkfbkjewgj"></Task>
+                    <Task title="Second task"></Task>
+                </ReorderableItem>
+                <ReorderableItem className="mt-4 p-4 border-solid border-black border-2">
+                    <Task title="Third task SUPER URGENT">
+                        <p>THIS IS SUPER DUPER IMPORTANTT!!!!!!!!! <a className="standard-button" href="https://google.com">Google</a></p>
+                    </Task>
                 </ReorderableItem>
             </ReorderableContainer>
         </div>
