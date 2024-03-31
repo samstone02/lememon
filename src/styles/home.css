@@ -23,13 +23,13 @@ div.app-mini-calendar {
     border-radius: 3px;
     padding: 16px 32px;
 }
-div.app-actionable {
+/* div.app-actionable {
     border: 2px solid var(--color-dark);
     border-radius: 3px;
     padding: 16px 32px;
     margin: 8px 0px;
     background-color: var(--color-light);
-}
+} */
 .app-actionable-to-do {
     display: flex;
     justify-content: space-between;

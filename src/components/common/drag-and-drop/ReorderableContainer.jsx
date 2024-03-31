@@ -9,6 +9,8 @@ export default function ReorderableContainer(props) {
     const [children, setChildren] = useState([])
 
     let reorderItems = (draggedItemId, dropTargetId) => {
+        console.log(children)
+
         const draggedItemIndex = children.findIndex(child => child.props.reorderableId == draggedItemId)
         const dropTargetIndex = children.findIndex(child => child.props.reorderableId == dropTargetId)
 
