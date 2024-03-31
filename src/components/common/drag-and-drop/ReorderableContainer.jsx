@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from "react"
-import { ReorderableContext } from "./Context"
+import React, { useEffect, useState } from "react"
+import { ReorderableContext } from "./ReorderableContext"
 
 /**
  * @summary Allows children `Reorderable` to be moved around on mouse drag and drop.
@@ -11,10 +11,6 @@ export default function ReorderableContainer(props) {
     let reorderItems = (draggedItemId, dropTargetId) => {
         const draggedItemIndex = children.findIndex(child => child.props.reorderableId == draggedItemId)
         const dropTargetIndex = children.findIndex(child => child.props.reorderableId == dropTargetId)
-
-        // get items between the dragged item and dropp target item (including the drop target)
-        console.log(draggedItemIndex)
-        console.log(dropTargetIndex)
 
         const shiftDown = draggedItemIndex < dropTargetIndex
 

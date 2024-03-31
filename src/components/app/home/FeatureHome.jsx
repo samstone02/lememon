@@ -1,6 +1,6 @@
 import TaskContainer from "./TaskContainer"
 
-import '../../../styles/home.css'
+import '$/styles/home.css'
 
 export default function HomeDrawer() {
     return (

@@ -1,12 +1,12 @@
-import { useContext, useRef } from "react";
-import { ReorderableContext } from "./Context"
+import React, { useContext } from "react";
+import { ReorderableContext } from "./ReorderableContext"
 
 /**
  * @summary A wrapper component which creates a draggable and reorderable element.
  * @param channel (string) Defines which reorderables can be placed into which containers. 
  */
-export default function Reorderable(props) {
-    const ctx = useContext(ReorderableContext)
+export default function ReorderableItem(props) {
+    const reorderItems = useContext(ReorderableContext)
 
     function handleOnDragStart(event) {
         event.dataTransfer.setData("dragged-item-reorderable-id", props.reorderableId)
@@ -22,18 +22,21 @@ export default function Reorderable(props) {
         const draggedItemId = event.dataTransfer.getData('dragged-item-reorderable-id')
         const dropTargetId = props.reorderableId
     
-        ctx(draggedItemId, dropTargetId)
+        reorderItems(draggedItemId, dropTargetId)
     }
 
     return (
         <div
-            className="reorderable"
+            className="reorderable-item"
             draggable
             onDragStart={handleOnDragStart}
             onDragOver={handleOnDragOver}
             onDrop={handleOnDrop}
         >
             {props.children}
+            {/* <div>
+                Drag Handle
+            </div> */}
         </div>
     )
 }
