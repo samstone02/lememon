@@ -61,7 +61,7 @@ export default function ReorderableItem(props) {
 
     return (
         <div
-            className={`${props.className} reorderable-item`}
+            className={`${props.className} flex justify-between align-center`}
             onDragEnter={handleOnDragEnter}
             onDragOver={handleOnDragOver}
             onDrop={handleOnDrop}

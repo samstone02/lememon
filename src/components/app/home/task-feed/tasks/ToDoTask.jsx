@@ -16,9 +16,9 @@ export default function ToDoTask(props) {
 
     return (
         <TaskItem>
-            <div className="flex">
+            <div className="flex gap-3">
                 <div
-                    className="pr-3"
+                    className=""
                     onMouseEnter={handleOnMouseEnter}
                     onMouseLeave={handleOnMouseLeave}
                 >
@@ -28,7 +28,7 @@ export default function ToDoTask(props) {
                         <Circle size={24} strokeWidth={2} absoluteStrokeWidth={true} />
                     )}
                 </div>
-                <div>
+                <div className="overflow-x-hidden">
                     {props.children}
                 </div>
             </div>
