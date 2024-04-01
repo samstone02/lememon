@@ -1,6 +1,5 @@
-import { BiDotsVertical } from "react-icons/bi";
-import { BiSort } from "react-icons/bi";
-import React, { useContext } from "react";
+import { ChevronLeft, Grip } from "lucide-react";
+import React, { useContext, useState } from "react";
 import { ReorderableContext } from "./ReorderableContext"
 
 import '$/styles/reorderable.css'
@@ -11,6 +10,8 @@ import '$/styles/reorderable.css'
  */
 export default function ReorderableItem(props) {
     const reorderItems = useContext(ReorderableContext)
+
+    console.log("item")
 
     function handleOnDragStart(event) {
         event.dataTransfer.setData("dragged-item-reorderable-id", props.reorderableId)
@@ -50,23 +51,35 @@ export default function ReorderableItem(props) {
         reorderItems(draggedItemId, dropTargetId)
     }
 
+    // function handleOnMouseEnter(event) {
+    //     setOptionsButtonVisibility("visible")
+    // }
+
+    // function handleOnMouseExit(event) {
+    //     setOptionsButtonVisibility("invisible")
+    // }
+
     return (
         <div
             className={`${props.className} reorderable-item`}
             onDragEnter={handleOnDragEnter}
             onDragOver={handleOnDragOver}
             onDrop={handleOnDrop}
+            // onMouseEnter={handleOnMouseEnter}
+            // onMouseLeave={handleOnMouseExit}
         >
             {props.children}
             <div className="flex">
                 <div
+                    // className={optionsButtonVisibility}
+                >
+                    <ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+                </div>
+                <div
                     draggable
                     onDragStart={handleOnDragStart}
                 >
-                    <BiSort/>
-                </div>
-                <div>
-                    <BiDotsVertical/>
+                    <Grip size={24} strokeWidth={2} absoluteStrokeWidth={true} />
                 </div>
             </div>
         </div>

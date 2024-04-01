@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { ReorderableContext } from "./ReorderableContext"
+import { Popsicle } from "lucide-react"
 
 /**
  * @summary Allows children `Reorderable` to be moved around on mouse drag and drop.
@@ -67,7 +68,14 @@ export default function ReorderableContainer(props) {
     }
 
     useEffect(() => {
-        setChildren(props.children.map((child, index) => {
+        let c = [];
+        if (!Array.isArray(props.children)) {
+            c.push(props.children)
+        }
+        else {
+            c = props.children
+        }
+        setChildren(c.map((child, index) => {
             return React.cloneElement(
                 child, {
                     key: index++,
