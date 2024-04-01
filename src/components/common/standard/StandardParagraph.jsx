@@ -1,6 +1,6 @@
 export default function StandardParagraph(props) {
     return (
-        <p className="">
+        <p className={`${props.className}`}>
             {props.children}
         </p>
     )

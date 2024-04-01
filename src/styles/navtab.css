@@ -1,0 +1,48 @@
+.navtab {
+    width: 100%;
+    height: 32px;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    gap: 8px;
+}
+a.navtab-inactive {
+    /* background-color: red; */
+}
+a.navtab-inactive:hover {
+    background-color: var(--color-medium-light);
+    color: var(--color-dark);
+}
+a.navtab-active {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+div.navtab--left-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.app-navtab-icon {
+    width: 24px;
+    height: 24px;
+}
+
+a.navtab--selected-background-black {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+button.app-navtab--hover-underline::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    width: 0px;
+    height: 2px;
+    transition: width ease-in 0.15s;
+}
+button.app-navtab--hover-underline:hover::after {
+    width: 100%;
+    background-color: var(--color-accent-darker);
+}

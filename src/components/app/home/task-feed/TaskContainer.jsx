@@ -1,25 +1,29 @@
 import ReorderableContainer from "$/components/common/drag-and-drop/ReorderableContainer"
+import ReorderableItem from "../../../common/drag-and-drop/ReorderableItem"
 import ToDoTask from "./tasks/ToDoTask"
 
 export default function TaskContainer(props) {
     return (
-        <div className={`app-main-left-group app-actionable-container ${props.className}`}>
-            <ReorderableContainer>
-                <ToDoTask>
-                    <h3>heading</h3>
-                    <p>something</p>
-                </ToDoTask>
-                <ToDoTask>
-                    <h3>My Name is Sam</h3>
-                    <p>This is a moderately long task description. Looks good?</p>
-                </ToDoTask>
-                <ToDoTask>
-                    <h3>LOREM!</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolores numquam vel non nulla earum laboriosam id accusamus corporis quisquam, sunt quas laudantium aliquam totam cum aspernatur cumque dolorem pariatur.</p>
-                </ToDoTask>
-                <ToDoTask>
-                    <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut ipsum aspernatur omnis! Molestiae harum et obcaecati excepturi ratione voluptate, ipsam laborum, porro a sit voluptates, dolorum delectus alias illum impedit.</h3>
-                </ToDoTask>
+        <div className={`app-actionable-container ${props.className}`}>
+            <ReorderableContainer className="flex flex-col gap-3">
+                <ReorderableItem className="border-2 border-e-ink rounded-sm p-3">
+                    <ToDoTask
+                        heading="heading"
+                        paragraph="text"
+                    />
+                </ReorderableItem>
+                <ReorderableItem className="border-2 border-e-ink rounded-sm p-3">
+                    <ToDoTask
+                        heading="long paragraph"
+                        paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aspernatur sequi obcaecati nulla unde ducimus sit quia beatae architecto earum cum id ipsa repellendus magnam totam ullam, odit delectus? Eos."
+                    />
+                </ReorderableItem>
+                <ReorderableItem className="border-2 border-e-ink rounded-sm p-3">
+                    <ToDoTask
+                        heading="very looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong heading"
+                        paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aspernatur sequi obcaecati nulla unde ducimus sit quia beatae architecto earum cum id ipsa repellendus magnam totam ullam, odit delectus? Eos."
+                    />
+                </ReorderableItem>
             </ReorderableContainer>
         </div>
     )

@@ -11,9 +11,11 @@ import '$/styles/reorderable.css'
 export default function ReorderableItem(props) {
     const reorderItems = useContext(ReorderableContext)
 
-    console.log("item")
+    console.log(props.reorderableId)
 
     function handleOnDragStart(event) {
+        console.debug("drag start")
+        console.debug(props.reorderableId)
         event.dataTransfer.setData("dragged-item-reorderable-id", props.reorderableId)
     }
 
@@ -21,6 +23,9 @@ export default function ReorderableItem(props) {
         // preventDefault call is required to identify a valid drop target
         // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#specifying_drop_targets
         event.preventDefault()
+
+        console.debug("drag enter")
+        console.debug(event.dataTransfer.getData("dragged-item-reorderable-id"))
 
         if (event.dataTransfer.getData('dragged-item-reorderable-id') == props.reorderableId) {
             return
@@ -41,6 +46,8 @@ export default function ReorderableItem(props) {
         if (event.dataTransfer.getData('dragged-item-reorderable-id') == props.reorderableId) {
             return
         }
+
+        console.debug("drop")
 
         reorderItemsHelper(event)
     }
@@ -71,7 +78,6 @@ export default function ReorderableItem(props) {
             {props.children}
             <div className="shrink-0 flex">
                 <div
-                    // className={optionsButtonVisibility}
                 >
                     <ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />
                 </div>

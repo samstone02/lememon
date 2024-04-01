@@ -7,7 +7,7 @@ export default function AppLayout() {
     return (
         <div className="h-screen flex bg-e-paper">
             <AppNav/>
-            <main className="p-12">
+            <main className="p-12 w-full">
                 <Outlet/>
             </main>
         </div>

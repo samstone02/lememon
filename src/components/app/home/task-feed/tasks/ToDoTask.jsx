@@ -1,7 +1,7 @@
 import { Circle, CircleCheck } from "lucide-react"
 import { useState } from "react"
-import ReorderableItem from "$/components/common/drag-and-drop/ReorderableItem"
-import TaskItem from "../TaskItem"
+import StandardHeading from "../../../../common/standard/StandardHeading"
+import StandardParagraph from "../../../../common/standard/StandardParagraph"
 
 export default function ToDoTask(props) {
     const [finishTaskButtonHovered, setFinishTastButtonHovered] = useState(false)
@@ -14,24 +14,24 @@ export default function ToDoTask(props) {
         setFinishTastButtonHovered(false)
     }
 
+    console.log(props)
+
     return (
-        <TaskItem>
-            <div className="flex gap-3">
-                <div
-                    className="shrink-0"
-                    onMouseEnter={handleOnMouseEnter}
-                    onMouseLeave={handleOnMouseLeave}
-                >
-                    {finishTaskButtonHovered ? (
-                        <CircleCheck size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-                    ) : (
-                        <Circle size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-                    )}
-                </div>
-                <div className="basis-full overflow-x-hidden">
-                    {props.children}
-                </div>
+        <div className="flex gap-3">
+            <div
+                onMouseEnter={handleOnMouseEnter}
+                onMouseLeave={handleOnMouseLeave}
+            >
+                {finishTaskButtonHovered ? (
+                    <CircleCheck size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+                ) : (
+                    <Circle size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+                )}
             </div>
-        </TaskItem>
-    )
+            <div className="basis-full overflow-x-hidden">
+                <StandardHeading className="break-words" level={3}>{props.heading}</StandardHeading>
+                <StandardParagraph className="break-words">{props.paragraph}</StandardParagraph>
+            </div>
+        </div>
+)
 }
