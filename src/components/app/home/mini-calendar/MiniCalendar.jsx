@@ -1,5 +1,5 @@
-export default function MiniCalendar() {
+export default function MiniCalendar(props) {
     return (
-        <div>Mini-Calendar</div>
+        <div className={props.className}>Mini-Calendar</div>
     )
 }

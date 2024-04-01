@@ -1,5 +1,5 @@
-export default function StickyNote() {
+export default function StickyNote(props) {
     return (
-        <div>StickyNote</div>
+        <div className={props.className}>StickyNote</div>
     )
 }
