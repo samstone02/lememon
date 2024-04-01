@@ -1,27 +1,23 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-import FeatureHome from '$/components/app/home/FeatureHome'
+import AppHome from '$/components/app/home/AppHome'
 import AppLayout from '$/components/layouts/AppLayout'
-import Dnd from '$/components/proto/Dnd'
 
 export default function App() {
     return (
         <BrowserRouter>
         <Routes>
-            <Route path="proto">
-                <Route path="dnd" element={ <Dnd/> }></Route>
-            </Route>
             <Route path="app" element={ <AppLayout/> }>
                 <Route
                     path=""
                     element={<Navigate replace to="/app/home" />}
                 />
-                <Route path="blog" element={ <FeatureHome/> } />
-                <Route path="calendar" element={ <FeatureHome/> } />
-                <Route path="flashcards" element={ <FeatureHome/> } />
-                <Route path="home" element={ <FeatureHome/> } />
-                <Route path="notes" element={ <FeatureHome/> } />
-                <Route path="to-do" element={ <FeatureHome/> } />
+                <Route path="blog" element={ <AppHome/> } />
+                <Route path="calendar" element={ <AppHome/> } />
+                <Route path="flashcards" element={ <AppHome/> } />
+                <Route path="home" element={ <AppHome/> } />
+                <Route path="notes" element={ <AppHome/> } />
+                <Route path="to-do" element={ <AppHome/> } />
             </Route>
         </Routes>
         </BrowserRouter>
