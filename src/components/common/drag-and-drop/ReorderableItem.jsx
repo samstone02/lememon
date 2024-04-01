@@ -76,7 +76,7 @@ export default function ReorderableItem(props) {
             // onMouseLeave={handleOnMouseExit}
         >
             {props.children}
-            <div className="shrink-0 flex">
+            <div className="shrink-0 flex gap-1">
                 <div
                 >
                     <ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />

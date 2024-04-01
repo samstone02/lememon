@@ -19,6 +19,7 @@ export default function ToDoTask(props) {
     return (
         <div className="flex gap-3">
             <div
+                className="shrink-0"
                 onMouseEnter={handleOnMouseEnter}
                 onMouseLeave={handleOnMouseLeave}
             >
