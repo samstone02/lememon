@@ -1,6 +1,6 @@
 import ReorderableContainer from "$/components/common/drag-and-drop/ReorderableContainer"
 import ReorderableItem from "$/components/common/drag-and-drop/ReorderableItem"
-import Task from "./Task"
+import Task from "./TaskItem"
 
 export default function TaskContainer() {
     return (

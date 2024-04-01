@@ -1,4 +1,4 @@
-import TaskContainer from "../app/home/TaskContainer" 
+import TaskContainer from "../app/home/task-feed/TaskContainer" 
 import ReorderableItem from "../common/drag-and-drop/ReorderableItem"
 import ReorderableContainer from "../common/drag-and-drop/ReorderableContainer"
 

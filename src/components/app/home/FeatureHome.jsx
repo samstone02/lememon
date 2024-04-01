@@ -1,4 +1,4 @@
-import TaskContainer from "./TaskContainer"
+import TaskContainer from "$/components/app/home/task-feed/TaskContainer"
 
 import '$/styles/home.css'
 
