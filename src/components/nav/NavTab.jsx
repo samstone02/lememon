@@ -1,21 +1,31 @@
+import { Bell } from 'lucide-react';
 import { NavLink } from 'react-router-dom'
-import '../../styles/navtab.css'
 
 export default function NavTab(props) {
 
     return (       
         <NavLink
-            className={(status) => { 
-                return (status.isActive? "navtab navtab-active": "navtab navtab-inactive")
+            className={(status) => {
+                const baseClassName = "flex justify-between items-center w-full px-2 py-2"
+                if (status.isActive) {
+                    return `${baseClassName} text-e-paper bg-e-ink`
+                }
+                else {
+                    return `${baseClassName} text-e-ink bg-e-paper`
+                }
             }}
             to={props.to}
         >
-            <div className="navtab--left-group">
-                <img className="app-navtab-icon" src={props.iconUrl} alt={props.altText}/>
+            <div className="flex items-center gap-2">
+                {props.icon}
                 {props.title}
             </div>
             <div>
-                <img className="app-navtab-icon" src={"/icons/temp/bell-svgrepo-com-light.svg"} alt="Notifications"/>
+                <Bell
+                    size={18}
+                    strokeWidth={2}
+                    absoluteStrokeWidth={true}
+                />
             </div>
         </NavLink>
     )

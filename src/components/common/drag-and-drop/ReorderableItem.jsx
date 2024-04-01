@@ -61,7 +61,7 @@ export default function ReorderableItem(props) {
 
     return (
         <div
-            className={`${props.className} flex justify-between align-center`}
+            className={`${props.className} flex justify-between items-start`}
             onDragEnter={handleOnDragEnter}
             onDragOver={handleOnDragOver}
             onDrop={handleOnDrop}
@@ -69,7 +69,7 @@ export default function ReorderableItem(props) {
             // onMouseLeave={handleOnMouseExit}
         >
             {props.children}
-            <div className="flex">
+            <div className="shrink-0 flex">
                 <div
                     // className={optionsButtonVisibility}
                 >

@@ -1,13 +1,11 @@
 import NavControls from "./NavControls";
 import NavTabContainer from "./NavTabContainer";
 
-import '../../styles/app-nav.css'
-
 export default function AppNav() {
     return (
-        <nav className="app-nav">
-            <NavTabContainer></NavTabContainer>
-            <NavControls></NavControls>
+        <nav className="grow-0 shrink-0 w-48 flex flex-col justify-between border-r-2 border-e-ink">
+            <NavTabContainer/>
+            <NavControls/>
         </nav>
     )
 }

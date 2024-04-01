@@ -1,7 +1,13 @@
+import { Hexagon } from "lucide-react"
+
 export default function NavToggle() {
     return (
-        <button className="navtab">
-            <img className="app-navtab-icon" src="/icons/temp/swirl-svgrepo-com.svg" alt="Toggle Sidebar"/>
+        <button className="w-full px-2 py-2">
+            <Hexagon
+                size={24}
+                strokeWidth={2}
+                absoluteStrokeWidth={true}
+            />
         </button>
     )
 }

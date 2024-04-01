@@ -5,9 +5,9 @@ import '../../styles/app-main.css'
 
 export default function AppLayout() {
     return (
-        <div className="app-layout">
+        <div className="h-screen flex bg-e-paper">
             <AppNav/>
-            <main className="app-main">
+            <main className="p-12">
                 <Outlet/>
             </main>
         </div>

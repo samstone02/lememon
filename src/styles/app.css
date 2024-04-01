@@ -6,14 +6,14 @@
 
 :root {
     --color-lighter: hsl(40, 19%, 95%);
-    --color-light: hsl(40, 10%, 85%); /* #e0dbd1 */
+    --color-light: #e8e6e3; /* #e0dbd1 */
     /* --color-medium-light: hsl(40, 10%, 75%); */
     /* --color-medium: hsl(39, 10%, 40%);
     --color-medium-dark: hsl(39, 10%, 40%); */
-    --color-dark: hsl(39, 10%, 15%);  /* #2a2722 */
+    --color-dark: #2a2722;  /* #2a2722 */
     --color-darker: hsl(39, 10%, 5%);
 
-    --color-light: hsl(40, 0%, 100%);
+    /* --color-light: hsl(40, 15%, 90%); */
     /* --color-medium: hsl(39, 0%, 40%); */
 
 
@@ -61,12 +61,6 @@ button {
     letter-spacing: 0.2px;
 
     cursor: pointer;
-}
-a {
-    color: initial;
-    text-decoration: none;
-
-    color: var(--color-accent-darker);
 }
 
 .app-light {
