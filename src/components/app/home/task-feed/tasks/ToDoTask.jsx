@@ -17,33 +17,31 @@ export default function ToDoTask(props) {
     console.log(props)
 
     return (
-        <div className="flex flex-col gap-3 w-full">
+        <div className="flex align-center justify-left gap-3">
             <div
-                className="shrink-0 flex gap-3 justify-between"
+                className="shrink-0 h-max"
+                onMouseEnter={handleOnMouseEnter}
+                onMouseLeave={handleOnMouseLeave}
             >
-                <div className="flex align-center justify-left gap-3">
-                    <div
-                        className="shrink-0 h-max"
-                        onMouseEnter={handleOnMouseEnter}
-                        onMouseLeave={handleOnMouseLeave}
-                    >
-                        {finishTaskButtonHovered ? (
-                            <CircleCheck size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-                        ) : (
-                            <Circle size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-                        )}
-                    </div>
-                    <StandardHeading className="break-words overflow-x-hidden" level={3}>{props.heading}</StandardHeading>
-                </div>
-                <div className="shrink-0 pr-3">
-                    <ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-                </div>
+                {finishTaskButtonHovered ? (
+                    <CircleCheck size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+                ) : (
+                    <Circle size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+                )}
             </div>
-            {props.paragraph &&
-                <div className="basis-full overflow-x-hidden">
-                    <StandardParagraph className="break-words">{props.paragraph}</StandardParagraph>
+            <div>
+                <div className="flex justify-between">
+                    <StandardHeading className="break-words overflow-x-hidden" level={3}>{props.heading}</StandardHeading>
+                    <div className="shrink-0 pr-3">
+                        <ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+                    </div>
                 </div>
-            }
+                {props.paragraph &&
+                    <div className="basis-full overflow-x-hidden">
+                        <StandardParagraph className="break-words">{props.paragraph}</StandardParagraph>
+                    </div>
+                }
+            </div>
         </div>
-)
+    )
 }
