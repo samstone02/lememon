@@ -17,22 +17,26 @@ export default function ToDoTask(props) {
     console.log(props)
 
     return (
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-3">
             <div
-                className="shrink-0"
+                className="shrink-0 flex gap-3"
                 onMouseEnter={handleOnMouseEnter}
                 onMouseLeave={handleOnMouseLeave}
             >
-                {finishTaskButtonHovered ? (
-                    <CircleCheck size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-                ) : (
-                    <Circle size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-                )}
+                <div className="shrink-0">
+                    {finishTaskButtonHovered ? (
+                        <CircleCheck size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+                    ) : (
+                        <Circle size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+                    )}
+                </div>
+                <StandardHeading className="break-words overflow-x-hidden" level={3}>{props.heading}</StandardHeading>
             </div>
-            <div className="basis-full overflow-x-hidden">
-                <StandardHeading className="break-words" level={3}>{props.heading}</StandardHeading>
-                <StandardParagraph className="break-words">{props.paragraph}</StandardParagraph>
-            </div>
+            {props.paragraph &&
+                <div className="basis-full overflow-x-hidden">
+                    <StandardParagraph className="break-words">{props.paragraph}</StandardParagraph>
+                </div>
+            }
         </div>
 )
 }

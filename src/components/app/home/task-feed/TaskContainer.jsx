@@ -8,6 +8,11 @@ export default function TaskContainer(props) {
             <ReorderableContainer className="flex flex-col gap-3">
                 <ReorderableItem className="border-2 border-e-ink rounded-sm p-3">
                     <ToDoTask
+                        heading="just a heading. fine for todos"
+                    />
+                </ReorderableItem>
+                <ReorderableItem className="border-2 border-e-ink rounded-sm p-3">
+                    <ToDoTask
                         heading="heading"
                         paragraph="text"
                     />

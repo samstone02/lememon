@@ -13,9 +13,6 @@ export default function ReorderableContainer(props) {
         const draggedItemIndex = children.findIndex(child => child.props.reorderableId == draggedItemId)
         const dropTargetIndex = children.findIndex(child => child.props.reorderableId == dropTargetId)
 
-        console.debug(draggedItemId)
-        console.debug(dropTargetId)
-
         if (isDuplicateReorder(draggedItemId, dropTargetId, draggedItemIndex, dropTargetIndex)) {
             // duplicate reorders occur because both drop and dragEnter call reorderItems
             // Ensure unneeded rerenders don't happen
@@ -71,7 +68,6 @@ export default function ReorderableContainer(props) {
     }
 
     useEffect(() => {
-        console.log(props.children)
         let c = [];
         if (!Array.isArray(props.children)) {
             c.push(props.children)
@@ -84,7 +80,6 @@ export default function ReorderableContainer(props) {
                 key: index,
                 reorderableId: index++
         }))
-        console.log(c)
         setChildren(c)
         }, [])
 
