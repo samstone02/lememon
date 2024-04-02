@@ -1,14 +1,22 @@
+import AnnouncementTask from "./tasks/AnnouncementTask"
 import ReorderableContainer from "$/components/common/drag-and-drop/ReorderableContainer"
-import ReorderableItem from "../../../common/drag-and-drop/ReorderableItem"
+import ReorderableItem from "$/components/common/drag-and-drop/ReorderableItem"
 import ToDoTask from "./tasks/ToDoTask"
 
 export default function TaskContainer(props) {
     return (
-        <div className={`app-actionable-container ${props.className}`}>
+        <div className={`app-actionable-container bg-e-ink ${props.className}`}>
             <ReorderableContainer className="flex flex-col gap-3">
                 <ReorderableItem className="border-2 border-e-ink rounded-sm p-3">
+                    <AnnouncementTask
+                        heading="new structure"
+                        paragraph="paragraph"
+                    />
+                </ReorderableItem>
+                <ReorderableItem className="border-2 border-e-ink rounded-sm p-3">
                     <ToDoTask
-                        heading="just a heading. fine for todos"
+                        heading="new structure"
+                        paragraph="paragraph"
                     />
                 </ReorderableItem>
                 <ReorderableItem className="border-2 border-e-ink rounded-sm p-3">
