@@ -6,10 +6,10 @@ import TaskItem from "../TaskItem";
 export default function AccouncementTask(props) {
 	return (
 		<TaskItem
-			heading={props.heading}
-			chevronMenu={
-				<ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-			}
+			headingMiddle={props.heading}
+			// chevronMenu={
+			// 	<ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />
+			// }
 		>
 			<Paragraph className="break-words">{props.paragraph}</Paragraph>
 			<Button>OK</Button>

@@ -1,22 +1,16 @@
-import { ChevronLeft, Grip } from "lucide-react";
-import React, { useContext, useState } from "react";
-import { ReorderableContext } from "./SortableContext";
+import React, { useContext } from "react";
+import { SortableListContext } from "./SortableListContext";
+import { SortableItemContext } from "./SortableItemContext";
+import DragHandle from "./DragHandle";
 
 /**
- * @summary A wrapper component which creates a draggable and reorderable element.
- * @param channel (string) Defines which reorderables can be placed into which containers.
+ * @summary A wrapper component which creates a draggable and sortable element.
+ * @param {string} channel - Defines which reorderables can be placed into which containers.
+ * @param {DragHandle} dragHandle - The drag handle component used to drag and drop this item.
+ * @param {string} sortableItemId - This sortable item's unique identifier. Must be unique within the channel.
  */
-export default function ReorderableItem(props) {
-	const reorderItems = useContext(ReorderableContext);
-
-	console.log(props.reorderableId);
-
-	function handleOnDragStart(event) {
-		event.dataTransfer.setData(
-			"dragged-item-reorderable-id",
-			props.reorderableId
-		);
-	}
+export default function SortableItem(props) {
+	const sortableListContext = useContext(SortableListContext);
 
 	function handleOnDragEnter(event) {
 		// preventDefault call is required to identify a valid drop target
@@ -57,16 +51,15 @@ export default function ReorderableItem(props) {
 			"dragged-item-reorderable-id"
 		);
 		const dropTargetId = props.reorderableId;
-		reorderItems(draggedItemId, dropTargetId);
+		sortableListContext(draggedItemId, dropTargetId);
 	}
 
-	// function handleOnMouseEnter(event) {
-	//     setOptionsButtonVisibility("visible")
-	// }
-
-	// function handleOnMouseExit(event) {
-	//     setOptionsButtonVisibility("invisible")
-	// }
+	const ctx = {
+		dragHandleEvents: {
+			handleOnDragEnter: handleOnDragEnter,
+		},
+		sortableItemId: props.reorderableId,
+	};
 
 	return (
 		<div
@@ -77,12 +70,9 @@ export default function ReorderableItem(props) {
 			// onMouseEnter={handleOnMouseEnter}
 			// onMouseLeave={handleOnMouseExit}
 		>
-			{props.children}
-			<div className="shrink-0 flex gap-1">
-				<div draggable onDragStart={handleOnDragStart}>
-					<Grip size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-				</div>
-			</div>
+			<SortableItemContext.Provider value={ctx}>
+				{props.children}
+			</SortableItemContext.Provider>
 		</div>
 	);
 }

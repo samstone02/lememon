@@ -1,18 +1,22 @@
-import Heading from "@components/elements/Heading";
+import DragHandle from "@components/utils/sortable/DragHandle";
 
 export default function TaskItem(props) {
+	const dragHandle = (
+		<DragHandle className="row-span-1 col-span-1 place-self-end self-start" />
+	);
+	let columnTemplate = "grid-cols-[24px,auto,24px]";
+	if (!props.headingLeft) {
+		columnTemplate = "grid-cols-[auto,24px]";
+	}
+
 	return (
-		<div className="flex align-center justify-left gap-3 w-full">
-			<div className="shrink-0 h-max w-6">{props.headingLeftMarginContent}</div>
-			<div className="w-full">
-				<div className="flex justify-between w-full">
-					<Heading className="break-words overflow-x-hidden" level={3}>
-						{props.heading}
-					</Heading>
-					<div className="shrink-0 pr-3">{props.chevronMenu}</div>
-				</div>
-				<div className="basis-full overflow-x-hidden">{props.children}</div>
+		<div className="w-full">
+			<div className={`grid ${columnTemplate} align-center`}>
+				{props.headingLeft && props.headingLeft}
+				{props.headingMiddle}
+				{dragHandle}
 			</div>
+			{props.content}
 		</div>
 	);
 }
