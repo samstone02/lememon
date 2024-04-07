@@ -7,6 +7,7 @@ import AppContext from "../../AppContext";
 export default function NavTab(props) {
 	const appCtx = useContext(AppContext);
 	const navCtx = useContext(NavContext);
+
 	return (
 		<NavLink
 			className={(status) => {

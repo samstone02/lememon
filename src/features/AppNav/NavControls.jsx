@@ -16,12 +16,15 @@ export default function NavControls() {
 		>
 			<button
 				onClick={(event) => {
+					console.log("TOGGLE");
 					console.log(appCtx.theme);
 					console.log(themes);
 
 					if (appCtx.theme.name.toLowerCase() == themeNames.LIGHT) {
+						// appCtx.theme = themes.DARK;
 						appCtx.setTheme(themes.DARK);
 					} else if (appCtx.theme.name.toLowerCase() == themeNames.DARK) {
+						// appCtx.theme = themes.LIGHT;
 						appCtx.setTheme(themes.LIGHT);
 					} else {
 						console.warn("Invalid current theme name.");
