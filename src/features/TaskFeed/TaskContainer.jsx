@@ -6,7 +6,7 @@ import ToDoTask from "./tasks/ToDoTask";
 export default function TaskContainer(props) {
 	return (
 		<SortableList
-			className={`bg-e-ink flex flex-col gap-3 overflow-scroll p-5 ${props.className}`}
+			className={`flex flex-col gap-3 overflow-scroll p-5 ${props.className}`}
 		>
 			<SortableItem className="border-2 border-e-ink rounded-sm p-3">
 				<AnnouncementTask title="new structure" paragraph="paragraph" />
