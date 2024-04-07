@@ -9,23 +9,23 @@ export default function TaskContainer(props) {
 			className={`bg-e-ink flex flex-col gap-3 overflow-scroll p-5 ${props.className}`}
 		>
 			<SortableItem className="border-2 border-e-ink rounded-sm p-3">
-				<AnnouncementTask heading="new structure" paragraph="paragraph" />
+				<AnnouncementTask title="new structure" paragraph="paragraph" />
 			</SortableItem>
 			<SortableItem className="border-2 border-e-ink rounded-sm p-3">
-				<ToDoTask heading="new structure" paragraph="paragraph" />
+				<ToDoTask title="new structure" paragraph="paragraph" />
 			</SortableItem>
 			<SortableItem className="border-2 border-e-ink rounded-sm p-3">
-				<ToDoTask heading="heading" paragraph="text" />
+				<ToDoTask title="heading" paragraph="text" />
 			</SortableItem>
 			<SortableItem className="border-2 border-e-ink rounded-sm p-3">
 				<ToDoTask
-					heading="long paragraph"
+					title="long paragraph"
 					paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aspernatur sequi obcaecati nulla unde ducimus sit quia beatae architecto earum cum id ipsa repellendus magnam totam ullam, odit delectus? Eos."
 				/>
 			</SortableItem>
 			<SortableItem className="border-2 border-e-ink rounded-sm p-3">
 				<ToDoTask
-					heading="very looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong heading"
+					title="very looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong heading"
 					paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aspernatur sequi obcaecati nulla unde ducimus sit quia beatae architecto earum cum id ipsa repellendus magnam totam ullam, odit delectus? Eos."
 				/>
 			</SortableItem>

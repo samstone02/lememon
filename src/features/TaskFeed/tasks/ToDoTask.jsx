@@ -30,18 +30,8 @@ export default function ToDoTask(props) {
 	);
 
 	return (
-		<TaskItem
-			headingLeft={checkOff}
-			headingMiddle={
-				<Heading level={3} className={`place-self-start`}>
-					{props.heading}
-				</Heading>
-			}
-			// headingRight={drag
-			// 	<ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-			// }
-		>
-			<StandardParagraph className="break-words">
+		<TaskItem headerIcon={checkOff} title={props.title}>
+			<StandardParagraph className="break-words col-span-2">
 				{props.paragraph}
 			</StandardParagraph>
 		</TaskItem>

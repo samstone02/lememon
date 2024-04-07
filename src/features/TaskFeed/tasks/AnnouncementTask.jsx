@@ -5,15 +5,12 @@ import TaskItem from "../TaskItem";
 
 export default function AccouncementTask(props) {
 	return (
-		<TaskItem
-			headingMiddle={props.heading}
-			// chevronMenu={
-			// 	<ChevronLeft size={24} strokeWidth={2} absoluteStrokeWidth={true} />
-			// }
-		>
-			<Paragraph className="break-words">{props.paragraph}</Paragraph>
-			<Button>OK</Button>
-			<Button>Learn More</Button>
+		<TaskItem title={props.title}>
+			<div className="col-span-3">
+				<Paragraph className="break-words">{props.paragraph}</Paragraph>
+				<Button>OK</Button>
+				<Button>Learn More</Button>
+			</div>
 		</TaskItem>
 	);
 }
