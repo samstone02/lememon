@@ -1,0 +1,88 @@
+/* The theme variables go here */
+/* Only theme-management.js should have access to these! */
+
+:root {
+    --neutral-one: "#000000";
+    --neutral-two: "#000000";
+    --neutral-three: "#000000";
+    --neutral-inverse-one: "#000000";
+    --neutral-inverse-two: "#000000";
+    --neutral-inverse-tbree: "#000000";
+    --primary-one: "#000000";
+    --primary-two: "#000000";
+    --primary-three: "#000000";
+}
+
+/* tailwind-like classnames */
+
+.bg-neutral-one {
+    background-color: var(--neutral-one);
+}
+
+.bg-neutral-two {
+    background-color: var(--neutral-two);
+}
+
+.bg-neutral-three {
+    background-color: var(--neutral-three);
+}
+
+.text-neutral-one {
+    background-color: var(--neutral-one);
+}
+
+.text-neutral-two {
+    background-color: var(--neutral-two);
+}
+
+.text-neutral-three {
+    background-color: var(--neutral-three);
+}
+
+.border-neutral-one {
+    background-color: var(--neutral-one);
+}
+
+.border-neutral-two {
+    background-color: var(--neutral-two);
+}
+
+.border-neutral-three {
+    background-color: var(--neutral-three);
+}
+
+.bg-neutral-inverse-one {
+    background-color: var(--neutral-inverse-one);
+}
+
+.bg-neutral-inverse-two {
+    background-color: var(--neutral-inverse-two);
+}
+
+.bg-neutral-inverse-three {
+    background-color: var(--neutral-inverse-three);
+}
+
+.text-neutral-inverse-one {
+    background-color: var(--neutral-inverse-one);
+}
+
+.text-neutral-inverse-two {
+    background-color: var(--neutral-inverse-two);
+}
+
+.text-neutral-inverse-three {
+    background-color: var(--neutral-inverse-three);
+}
+
+.border-neutral-inverse-one {
+    background-color: var(--neutral-inverse-one);
+}
+
+.border-neutral-inverse-two {
+    background-color: var(--neutral-inverse-two);
+}
+
+.border-neutral-inverse-three {
+    background-color: var(--neutral-inverse-three);
+}

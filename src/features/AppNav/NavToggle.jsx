@@ -1,10 +1,8 @@
 import { Hexagon } from "lucide-react";
 import { useContext } from "react";
 import NavContext from "./NavContext";
-import AppContext from "@/AppContext";
 
 export default function NavToggle() {
-	const appCtx = useContext(AppContext);
 	const navCtx = useContext(NavContext);
 
 	function handleOnClick(event) {
@@ -17,10 +15,7 @@ export default function NavToggle() {
 	}
 
 	return (
-		<button
-			className={`w-full px-2 py-2 text-${appCtx.theme.color.primary.one}`}
-			onClick={handleOnClick}
-		>
+		<button className={`w-full px-2 py-2 text-${""}`} onClick={handleOnClick}>
 			<Hexagon size={24} strokeWidth={2} absoluteStrokeWidth={true} />
 		</button>
 	);

@@ -2,10 +2,8 @@ import { Bell } from "lucide-react";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import NavContext from "./NavContext";
-import AppContext from "../../AppContext";
 
 export default function NavTab(props) {
-	const appCtx = useContext(AppContext);
 	const navCtx = useContext(NavContext);
 
 	return (
@@ -14,9 +12,9 @@ export default function NavTab(props) {
 				const baseClassName =
 					"flex justify-between items-center w-full px-2 py-2";
 				if (status.isActive) {
-					return `${baseClassName} bg-${appCtx.theme.color.neutralInverse.one} text-${appCtx.theme.color.neutral.one}`;
+					return `${baseClassName} bg-${""} text-${""}`;
 				} else {
-					return `${baseClassName} bg-${appCtx.theme.color.neutral.one} text-${appCtx.theme.color.neutralInverse.one}`;
+					return `${baseClassName}`;
 				}
 			}}
 			to={props.to}

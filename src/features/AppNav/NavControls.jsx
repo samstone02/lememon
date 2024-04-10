@@ -1,11 +1,9 @@
 import { LayoutGrid, Settings, SunMoon } from "lucide-react";
 import { useContext } from "react";
 import NavContext from "./NavContext";
-import AppContext from "@/AppContext";
-import { themes, themeNames } from "@constants/theme";
+import { getTheme, setTheme } from "@utils/options/theme/theme-management";
 
 export default function NavControls() {
-	const appCtx = useContext(AppContext);
 	const navCtx = useContext(NavContext);
 
 	return (
@@ -16,18 +14,13 @@ export default function NavControls() {
 		>
 			<button
 				onClick={(event) => {
-					console.log("TOGGLE");
-					console.log(appCtx.theme);
-					console.log(themes);
+					let currentThemeName = getTheme();
+					console.log(currentThemeName);
 
-					if (appCtx.theme.name.toLowerCase() == themeNames.LIGHT) {
-						// appCtx.theme = themes.DARK;
-						appCtx.setTheme(themes.DARK);
-					} else if (appCtx.theme.name.toLowerCase() == themeNames.DARK) {
-						// appCtx.theme = themes.LIGHT;
-						appCtx.setTheme(themes.LIGHT);
+					if (currentThemeName == "light") {
+						setTheme("dark");
 					} else {
-						console.warn("Invalid current theme name.");
+						setTheme("light");
 					}
 				}}
 			>

@@ -1,0 +1,20 @@
+{
+    "name": "light",
+    "colors": {
+        "neutral": {
+            "one": "#e8e6e3",
+            "two": "#70695c",
+            "three": "red"
+        },
+        "neutral-inverse": {
+            "one": "#2a2722",
+            "two": "red",
+            "three": "red"
+        },
+        "primary": {
+            "one": "#267371",
+            "two": "#59a6a4",
+            "three": "red"
+        }
+    }
+}
