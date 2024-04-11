@@ -17,10 +17,6 @@ export function getTheme() {
 }
 
 export function setTheme(themeName) {
-	console.log("ok");
-	console.log(currentThemeObj);
-	console.log(themeName);
-
 	if (currentThemeObj.name == themeName) {
 		return;
 	}
@@ -52,13 +48,19 @@ function setCssVars(jsonTheme) {
 	root.style.setProperty("--neutral-one", jsonTheme.colors.neutral.one);
 	root.style.setProperty("--neutral-two", jsonTheme.colors.neutral.two);
 	root.style.setProperty("--neutral-three", jsonTheme.colors.neutral.three);
-	root.style.setProperty("--neutral-inverse-one", jsonTheme.colors.neutral.one);
-	root.style.setProperty("--neutral-inverse-two", jsonTheme.colors.neutral.two);
+	root.style.setProperty(
+		"--neutral-inverse-one",
+		jsonTheme.colors["neutral-inverse"].one
+	);
+	root.style.setProperty(
+		"--neutral-inverse-two",
+		jsonTheme.colors["neutral-inverse"].two
+	);
 	root.style.setProperty(
 		"--neutral-inverse-three",
-		jsonTheme.colors.neutral.three
+		jsonTheme.colors["neutral-inverse"].three
 	);
-	root.style.setProperty("--primary-one", jsonTheme.colors.neutral.one);
-	root.style.setProperty("--primary-two", jsonTheme.colors.neutral.two);
-	root.style.setProperty("--primary-three", jsonTheme.colors.neutral.three);
+	root.style.setProperty("--primary-one", jsonTheme.colors.primary.one);
+	root.style.setProperty("--primary-two", jsonTheme.colors.primary.two);
+	root.style.setProperty("--primary-three", jsonTheme.colors.primary.three);
 }
