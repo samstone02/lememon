@@ -8,7 +8,7 @@ export default function AppNav() {
 
 	return (
 		<nav
-			className={`grow-0 shrink-0 flex flex-col justify-between border-r-2 border-black ${
+			className={`grow-0 shrink-0 flex flex-col justify-between border-r-2 border-neutral-inverse-one ${
 				isExpanded ? "w-48" : "w-11"
 			}`}
 		>
