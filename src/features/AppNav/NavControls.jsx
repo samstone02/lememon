@@ -15,7 +15,6 @@ export default function NavControls() {
 			<button
 				onClick={(event) => {
 					let currentThemeName = getTheme();
-					console.log(currentThemeName);
 
 					if (currentThemeName == "light") {
 						setTheme("dark");

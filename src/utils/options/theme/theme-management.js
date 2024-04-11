@@ -1,8 +1,11 @@
-import { localStorageThemeKey } from "@constants/theme";
+// import { localStorageThemeKey as currentThemeKey } from "@constants/theme";
 
 const root = document.querySelector(":root");
 
-let currentThemeStr = localStorage.getItem(localStorageThemeKey);
+const currentThemeKey = "CURRENT-THEME";
+const themeKeyBase = "THEME:";
+
+let currentThemeStr = localStorage.getItem(currentThemeKey);
 let currentThemeObj;
 
 if (!currentThemeStr) {
@@ -17,7 +20,22 @@ export function getTheme() {
 }
 
 export function setTheme(themeName) {
-	if (currentThemeObj.name == themeName) {
+	if (currentThemeObj != null && currentThemeObj.name == themeName) {
+		console.debug("SAME THEME");
+		return;
+	}
+
+	let potentialCachedTheme = localStorage.getItem(themeKeyBase + themeName);
+	if (potentialCachedTheme) {
+		console.debug("CACHE HIT!");
+		let potentialCachedThemeObj = JSON.parse(potentialCachedTheme);
+
+		setCssVars(potentialCachedThemeObj);
+		currentThemeObj = potentialCachedThemeObj;
+		localStorage.setItem(
+			currentThemeKey,
+			JSON.stringify(potentialCachedThemeObj)
+		);
 		return;
 	}
 
@@ -26,11 +44,15 @@ export function setTheme(themeName) {
 			response
 				.json()
 				.then((jsonTheme) => {
-					console.log("THEME");
-					console.log(jsonTheme);
+					console.debug("FETCHING");
+
 					setCssVars(jsonTheme);
 					currentThemeObj = jsonTheme;
-					localStorage.setItem(localStorageThemeKey, JSON.stringify(jsonTheme));
+					localStorage.setItem(currentThemeKey, JSON.stringify(jsonTheme));
+					localStorage.setItem(
+						themeKeyBase + jsonTheme.name,
+						JSON.stringify(jsonTheme)
+					);
 				})
 				.catch((error) => {
 					console.log(error);
@@ -42,7 +64,7 @@ export function setTheme(themeName) {
 }
 
 function setCssVars(jsonTheme) {
-	console.debug(jsonTheme);
+	// console.debug(jsonTheme);
 	root.setAttribute("theme", jsonTheme.name);
 
 	root.style.setProperty("--neutral-one", jsonTheme.colors.neutral.one);
