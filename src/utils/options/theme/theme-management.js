@@ -9,7 +9,7 @@ let currentThemeStr = localStorage.getItem(currentThemeKey);
 let currentThemeObj;
 
 if (!currentThemeStr) {
-	setTheme("light");
+	setTheme("lememon-eink-light");
 } else {
 	currentThemeObj = JSON.parse(currentThemeStr);
 	setCssVars(currentThemeObj);

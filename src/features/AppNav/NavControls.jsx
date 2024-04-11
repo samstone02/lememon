@@ -16,10 +16,10 @@ export default function NavControls() {
 				onClick={(event) => {
 					let currentThemeName = getTheme();
 
-					if (currentThemeName == "light") {
-						setTheme("dark");
+					if (currentThemeName == "lememon-eink-light") {
+						setTheme("lememon-eink-dark");
 					} else {
-						setTheme("light");
+						setTheme("lememon-eink-light");
 					}
 				}}
 			>
