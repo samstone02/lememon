@@ -19,23 +19,28 @@ export default function Flip(props) {
 
 	return (
 		<div
-			className={`${props.className} relative bg-neutral-three`}
+			className={`${props.className} grid`}
+			style={{ width: props.width, height: props.height }}
 			onClick={handleOnClick}
 		>
 			<div
-				className={`absolute transition-transform`}
+				className={`${props.frontFaceClassName} transition-transform`}
 				style={{
 					transform: !isFacingUp ? "rotateY(0.5turn)" : "",
 					backfaceVisibility: "hidden",
+					gridRow: 1,
+					gridColumn: 1,
 				}}
 			>
 				{props.front}
 			</div>
 			<div
-				className={`absolute transition-transform`}
+				className={`${props.backFaceClassName} transition-transform`}
 				style={{
 					transform: isFacingUp ? "rotateY(0.5turn)" : "",
 					backfaceVisibility: "hidden",
+					gridRow: 1,
+					gridColumn: 1,
 				}}
 			>
 				{props.back}

@@ -2,6 +2,7 @@ import AnnouncementTask from "./tasks/AnnouncementTask";
 import SortableList from "@components/utils/sortable/SortableList";
 import SortableItem from "@components/utils/sortable/SortableItem";
 import ToDoTask from "./tasks/ToDoTask";
+import FlashcardSetTask from "./tasks/FlashcardSetTask";
 
 export default function TaskContainer(props) {
 	return (
@@ -28,6 +29,9 @@ export default function TaskContainer(props) {
 					title="very looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong heading"
 					paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aspernatur sequi obcaecati nulla unde ducimus sit quia beatae architecto earum cum id ipsa repellendus magnam totam ullam, odit delectus? Eos."
 				/>
+			</SortableItem>
+			<SortableItem className="border-2 border-neutral-inverse-one rounded-sm p-3">
+				<FlashcardSetTask title="Flashcard Recall" />
 			</SortableItem>
 		</SortableList>
 	);
