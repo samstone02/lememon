@@ -1,5 +1,3 @@
-// import { localStorageThemeKey as currentThemeKey } from "@constants/theme";
-
 const root = document.querySelector(":root");
 
 const currentThemeKey = "CURRENT-THEME";
