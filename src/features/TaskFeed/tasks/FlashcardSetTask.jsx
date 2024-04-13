@@ -8,7 +8,7 @@ export default function FlashcardSetTask(props) {
 	return (
 		<TaskItem title={props.title}>
 			<Flashcard
-				className="col-span-3 w-96 h-64"
+				className="col-span-3 w-96 h-48"
 				frontFaceClassName={faceClassName + " bg-neutral-one "}
 				backFaceClassName={faceClassName + " bg-neutral-two"}
 				height="16em"

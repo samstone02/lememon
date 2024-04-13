@@ -6,12 +6,15 @@ import Flip from "@components/utils/flip/Flip";
  */
 export default function Flashcard(props) {
 	return (
-		<Flip
-			className={`${props.className}`}
-			front={props.front}
-			back={props.back}
-			frontFaceClassName={props.frontFaceClassName}
-			backFaceClassName={props.backFaceClassName}
-		/>
+		<div>
+			<Flip
+				className={`${props.className}`}
+				front={props.front}
+				back={props.back}
+				frontFaceClassName={props.frontFaceClassName}
+				backFaceClassName={props.backFaceClassName}
+			/>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</div>
 	);
 }
